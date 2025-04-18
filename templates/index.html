@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM11 Dryer Canvas Tension Measurement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #003366;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-banner {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .form-group input {
+            width: calc(14.285% - 10px);
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 1.1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff4d00;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BM11 Dryer Canvas Tension Measurement</h1>
+        <p>Enter pressure setpoints and canvas tension values</p>
+    </header>
+
+    <div class="container">
+        <!-- Insert Image Here -->
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/canvas_tension.jpg') }}" alt="Canvas Tension">
+        </div>
+        
+        <form action="/calculate" method="post">
+            <!-- Bellow Pressure Setpoint (x) Section -->
+            <div class="section">
+                <div class="section-banner">
+                    Bellow Pressure Setpoint (kPa)
+                </div>
+                <div class="form-group">
+                    <input type="text" name="x1" placeholder="Setpoint 1" required>
+                    <input type="text" name="x2" placeholder="Setpoint 2" required>
+                    <input type="text" name="x3" placeholder="Setpoint 3" required>
+                    <input type="text" name="x4" placeholder="Setpoint 4" required>
+                    <input type="text" name="x5" placeholder="Setpoint 5" required>
+                    <input type="text" name="x6" placeholder="Setpoint 6" required>
+                    <input type="text" name="x7" placeholder="Setpoint 7" required>
+                </div>
+            </div>
+
+            <!-- Actual Canvas Tension (y) Section -->
+            <div class="section">
+                <div class="section-banner">
+                    Actual Canvas Tension (kN/m)
+                </div>
+                <div class="form-group">
+                    <input type="text" name="y1" placeholder="Tension 1" required>
+                    <input type="text" name="y2" placeholder="Tension 2" required>
+                    <input type="text" name="y3" placeholder="Tension 3" required>
+                    <input type="text" name="y4" placeholder="Tension 4" required>
+                    <input type="text" name="y5" placeholder="Tension 5" required>
+                    <input type="text" name="y6" placeholder="Tension 6" required>
+                    <input type="text" name="y7" placeholder="Tension 7" required>
+                </div>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; Dev in Y2025 by BM11-Thai cane paper</p>
+    </footer>
+</body>
+</html>
